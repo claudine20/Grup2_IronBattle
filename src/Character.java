@@ -39,7 +39,16 @@ public abstract class Character {
     }
 
     public void setHp(int hp) {
-        this.hp = hp;
+        //  check if negative, if negative set to 0 for display user experience
+        if (hp < 0) {
+            this.hp = 0;
+        } else {
+            this.hp = hp; //keeps original hp
+        }
+
+        if (this.hp <= 0) {
+           this.isAlive = false; //if hp is less than 0 charactre is killed
+        }
     }
 
     public void setAlive(boolean alive) {
