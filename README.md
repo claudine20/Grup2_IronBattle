@@ -26,10 +26,10 @@ Game Rules:
 - Battle continues until at least one character is defeated
 - In case of a tie, the battle restarts with new HP
 
-Implementation Notes
+Implementation Notes:
 
 - Character created as an abstract class so it can be extended by Warrior and Wizard classes
-- HP is never allowed to drop below zero, characters die at 0 HP.
+- HP is never allowed to drop below zero, characters die at 0 HP
 - Each character gets a unique randomly-generated 4-digit ID 
 - Both characters can attack in the same round, allowing for possible tie scenarios
 - Added input validation to prevent errors and improve user experience
