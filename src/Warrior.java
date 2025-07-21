@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Warrior extends Character implements Atacker  {
+public class Warrior extends Character implements Attacker  {
 
     private String name;
     private int hp;

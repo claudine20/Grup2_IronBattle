@@ -84,4 +84,6 @@ public abstract class Character {
                 ", isAlive=" + isAlive + "}";
     }
 
+    protected void takeDamage(int damage) {
+    }
 }
