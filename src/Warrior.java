@@ -68,10 +68,7 @@ public class Warrior extends Character implements Attacker  {
             Stamina=getStamina()+2;
            
         }
-//        else if (this.hp==0) {
-//            System.out.println(this.getName()+ " is not alive");
-//
-//        }
+
         else {
             //Weak attack
             System.out.println(this.getName()+ " makes a weak attack on "+opponent.getName());
