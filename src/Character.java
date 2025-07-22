@@ -29,7 +29,6 @@ public abstract class Character {
 
     // setters
 
-
     public void setId(String id) {
         this.id = id;
     }

@@ -36,7 +36,7 @@ public class Wizard extends Character implements Attacker {
     //-- Constructors --
 
     public Wizard(String name, int hp, int mana, int intelligence) {
-        super(name, hp);
+        super(name, hp); // Calls Character constructor
 
         this.mana = mana;
         this.intelligence = intelligence;
@@ -51,7 +51,8 @@ public class Wizard extends Character implements Attacker {
      */
 
     @Override
-    public void attack(Character target) {
+    //public void attack(Character target)
+    public void attack(Character opponent) {
 
         int damage = 0;
         String attackType = "";
@@ -86,8 +87,8 @@ public class Wizard extends Character implements Attacker {
             manaRecovery = 2;
             System.out.println(this.getName() + " has too little mana and cannot attack. Recovering mana.");
         } else if (damage > 0) {
-            target.takeDamage(damage);
-            System.out.println(this.getName() + " casts a " + attackType + " on " + target.getName() + ", dealing " + damage + " damage.");
+            opponent.takeDamage(damage);
+            System.out.println(this.getName() + " casts a " + attackType + " on " + opponent.getName() + ", dealing " + damage + " damage.");
             this.mana -= manaCost;
         }
 
