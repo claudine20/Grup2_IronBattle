@@ -56,7 +56,7 @@ public class BattleSimulator {
                 System.out.println(player1.getName() + " VS " + player2.getName());
                 int round = 1;
 
-                while (player1.isAlive() && player2.isAlive()) {
+                while (player1.getIsAlive() && player2.getIsAlive()) {
                     System.out.println("\n-- Round " + round + " --");
                     ((Attacker) player1).attack(player2);
                     ((Attacker) player2).attack(player1);
@@ -65,13 +65,13 @@ public class BattleSimulator {
                     round++;
                 }
 
-                if (!player1.isAlive() && !player2.isAlive()) {
+                if (!player1.getIsAlive() && !player2.getIsAlive()) {
                     System.out.println("\nIt's a tie! Restarting the battle with new HP...");
                     player1.setHp(rand.nextInt(101) + 100);
-                    player1.setAlive(true);
+                    player1.setIsAlive(true);
                     player2.setHp(rand.nextInt(51) + 50);
-                    player2.setAlive(true);
-                } else if (player1.isAlive()) {
+                    player2.setIsAlive(true);
+                } else if (player1.getIsAlive()) {
                     System.out.println("\nWinner: " + player1.getName());
                 } else {
                     System.out.println("\nWinner: " + player2.getName());
