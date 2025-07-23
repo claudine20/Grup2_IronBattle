@@ -81,7 +81,7 @@ public abstract class Character {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", hp=" + hp +
-                ", isAlive=" + isAlive + "}";
+                ", isAlive=" + isAlive + "}";//2
     }
 
 }
