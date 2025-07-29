@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class Warrior extends Character implements Attacker  {
 
@@ -31,7 +32,6 @@ public class Warrior extends Character implements Attacker  {
     }
 
 
-
     @Override
     // New start
     public void attack(Character opponent) {
@@ -61,38 +61,22 @@ public class Warrior extends Character implements Attacker  {
             System.out.println(opponent.getName() + " has been defeated!");
         }
     }
-    // New END
 
-//    public void attack(Character opponent){
-////        "What kind of attack you want to make? 1-Heavy attack, 2-Weak attack";
-//        int typeOfAttack= ((int) (Math.random()*2)+1);
-//        int newHp = 0;
-////        System.out.println(typeOfAttack);
-//        if (typeOfAttack==1&&Stamina>10){
-////Heavy attack
-//            System.out.println(this.getName()+ " makes a heavy attack on "+opponent.getName());
-//            Stamina=getStamina()-5;
-//            //newHp = opponent.getHp() - getStrength();
-//            opponent.takeDamage(getStrength());  // esto
-//
-//
-//        }else if(Stamina<10){
-//            System.out.println(this.getName()+ " does not have the stamina to make an attack he will not inflict any damage and recover his stamina");
-//            Stamina=getStamina()+2;
-//
-//        }
-//
-//        else {
-//            //Weak attack
-//            System.out.println(this.getName()+ " makes a weak attack on "+opponent.getName());
-//            Stamina=getStamina()+1;
-//            newHp = opponent.getHp()- (getStrength()/2);
-//
-//        }
-//        System.out.println(this.getName()+" stamina: "+Stamina);
-//        //System.out.println(opponent.getName()+" hp: "+newHp);
-//        //System.out.println(this.getName()+" strength: "+ strength);
-//
-//
-//    }
+    @Override
+    public void reset() {
+        Random rand = new Random();  // Create a Random object
+
+        // Reset health points to a value between 100 and 200
+        this.setHp(rand.nextInt(101) + 100);
+
+        // Reset stamina to a value between 10 and 50
+        this.setStamina(rand.nextInt(41) + 10);
+
+        // Reset strength to a value between 1 and 10
+        this.setStrength(rand.nextInt(10) + 1);
+
+        // Set the warrior as alive
+        this.setIsAlive(true);
+    }
+
 }
